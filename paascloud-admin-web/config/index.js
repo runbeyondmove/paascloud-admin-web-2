@@ -32,6 +32,13 @@ module.exports = {
           '^/omc': '/omc'
         }
       },
+      '/tpc': {
+        target: 'http://dev-api.paascloud.net:7979/',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/tpc': '/tpc'
+        }
+      },
       '/zuul': {
         target: 'http://dev-api.paascloud.net:7979/',
         changeOrigin: true,

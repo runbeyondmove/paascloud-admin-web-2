@@ -139,7 +139,7 @@ function jumpLoginPage () {
   if (process.env.NODE_ENV === 'production') {
     window.location.href = 'http://login.paascloud.net/login';
   } else {
-    window.location.href = 'http://dev-login.paascloud.net/login';
+    window.location.href = 'http://dev-login.paascloud.net:81/login';
   }
 }
 
@@ -205,6 +205,7 @@ router.beforeEach((to, from, next) => {
   });
   let authToken = store.getters.getAuthToken;
   if (authToken && authToken.access_token) {
+    // 已登录更新用户菜单
     updateUserMenu();
     NProgress.start();
     next();
